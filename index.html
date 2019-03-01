@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="inst">Hit  enter and generate a number between 1- 6 as a DICE!!!</h1>
+    <p id="result-txt"></p>
+    <p id="result2-txt"></p>
+    <p id="total-txt"></p>
+    <br>
+    <br>
+    <br>
+    <input type="button" value="Refresh Page" onClick="location.href=location.href">
+
+
+
+    <script type="text/javascript">
+    var intdice=0;
+
+    var dice = prompt("Welcome to DICES. How many Dices do you want to use (2 max)", "1");
+    intdice=parseInt(dice);
+    
+
+    document.onkeyup=function (event){
+   if (intdice===1) {
+//Generates integer number from 1 to 6
+var result = Math.floor(Math.random() * 6) + 1;
+document.getElementById ("result-txt").innerHTML = "You got " + result;
+//alert("Hit Enter to throw the dice");
+document.getElementById ("inst").innerHTML = "Hit  enter again to throw the dice";
+   }
+   else {
+    var result = Math.floor(Math.random() * 6) + 1;
+    var result2 = Math.floor(Math.random() * 6) + 1;
+    document.getElementById ("result-txt").innerHTML = "Fist  dice is " + result;
+    document.getElementById ("result2-txt").innerHTML = "Second  dice is " + result2;
+    document.getElementById ("total-txt").innerHTML = "The total is  is " + (result+result2);
+//alert("Hit Enter to throw the dice");
+document.getElementById ("inst").innerHTML = "Hit  enter again to throw the dices"; 
+   }
+    
+   function myFunction() {
+  location.reload(true);
+
+};
+
+  
+};  
+
+
+    </script>
+    
+</body>
+</html>
